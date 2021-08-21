@@ -1,0 +1,26 @@
+@width: 500px;
+@top-height: 200px;
+@middle-height: 500px;
+@bottom-height: 300px;
+
+.clock {
+  width: @width;
+  .top {
+    height: @top-height;
+    background-color: #883355;
+  }
+  .middle {
+    height: @middle-height;
+
+    .frame {
+      height: 100%;
+      width: 80%;
+      margin: 0 auto;
+      background-color: #883300;
+    }
+  }
+  .bottom {
+    height: @bottom-height;
+    background-color: #883300;
+  }
+}
