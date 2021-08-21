@@ -1,26 +1,57 @@
-@width: 500px;
-@top-height: 200px;
-@middle-height: 500px;
-@bottom-height: 300px;
+@width: 90vw;
+@top-height: @width * 0.5;
+@middle-height: @width * 0.8;
+@bottom-height: @width * 0.5;
+
+@keyframes animatedKing {
+  0% { background-position: 200% -50%; }
+  70% { background-position: 70% 8% }
+  100% { background-position: 70% 8% }
+}
 
 .clock {
   width: @width;
+  margin: 0 auto;
+  background-image: url("ref/clock.png");
+  background-size: 90vw;
   .top {
     height: @top-height;
-    background-color: #883355;
   }
   .middle {
     height: @middle-height;
 
     .frame {
+      position: relative;
       height: 100%;
       width: 80%;
       margin: 0 auto;
-      background-color: #883300;
+
+      .circle {
+        position: absolute;
+        top: @width*0.418;
+        left: @width*0.135;
+        width: @width*0.13;
+        height: @width*0.13;
+        background-image: url("ref/king.png");
+        background-size: @width*0.25;
+        background-position: 200% -50%;
+        background-repeat: no-repeat;
+        background-color: #000;
+        animation: animatedKing 7s linear infinite;
+        border-radius: 50%;
+      }
     }
   }
   .bottom {
     height: @bottom-height;
-    background-color: #883300;
   }
+}
+
+
+
+.king {
+  width: @width;
+  height: 500px;
+  background-image: url("ref/king.png");
+  background-size: 500px;
 }
